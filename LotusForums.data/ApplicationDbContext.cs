@@ -1,6 +1,7 @@
 ﻿using LotusForums.Data.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 
 namespace LotusForums.Data
 {
@@ -11,9 +12,10 @@ namespace LotusForums.Data
         {
         }
 
-        public DbSet<ApplicationDbContext> ApplicationUsers { get; set; }
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
         public DbSet<Forum> Forums { get; set; }
         public DbSet<Post> Posts { get; set; }
-        public DbSet<PostReply> Replies { get; set; }
+        public DbSet<PostReply> PostReplies { get; set; }
+        
     }
 }

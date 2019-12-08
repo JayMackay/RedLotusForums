@@ -1,18 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using LotusForums.Models;
 using LotusForums.Models.AccountViewModels;
 using LotusForums.Services;
+using LotusForums.Data.Models;
 
 namespace LotusForums.Controllers
 {
@@ -20,6 +16,7 @@ namespace LotusForums.Controllers
     [Route("[controller]/[action]")]
     public class AccountController : Controller
     {
+
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IEmailSender _emailSender;
