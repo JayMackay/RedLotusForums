@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LotusForums.data\LotusForums.Data.csproj" />
+    <ProjectReference Include="..\LotusForums.Service\LotusForums.Service.csproj" />
   </ItemGroup>
 
 </Project>

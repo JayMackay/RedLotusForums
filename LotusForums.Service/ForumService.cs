@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using LotusForums.Data;
 using LotusForums.Data.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace LotusForums.Service
 {
-    public class ForumService : IForum
+    public class ForumService : Forum
     {
         private readonly ApplicationDbContext _context;
 
@@ -27,7 +29,8 @@ namespace LotusForums.Service
 
         public IEnumerable<Forum> GetAll()
         {
-            throw new NotImplementedException();
+            return _context.Forums
+                .Include(forum => forum.Posts);
         }
 
         public IEnumerable<ApplicationUser> GetAllActiveUSers()
@@ -35,9 +38,14 @@ namespace LotusForums.Service
             throw new NotImplementedException();
         }
 
-        public IForum GetById(int id)
+        public Forum GetById(int id)
         {
-            throw new NotImplementedException();
+            var forum = _context.Forums.Where(f => f.Id == id)
+                .Include(f => f.Posts).ThenInclude(p => p.User)
+                .Include(f => f.Posts).ThenInclude(p => p.Replies).ThenInclude(r => r.User)     
+                .FirstOrDefault();
+
+            return forum;
         }
 
         public Task UpdateForumDescription(int forumId, string newDescription)

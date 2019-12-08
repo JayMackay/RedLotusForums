@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using LotusForums.Data;
 using LotusForums.Services;
 using LotusForums.Data.Models;
+using LotusForums.Service;
 
 namespace LotusForums
 {
@@ -31,6 +32,7 @@ namespace LotusForums
 
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
+            services.AddScoped<IForum, ForumService>();
 
             services.AddMvc();
         }
