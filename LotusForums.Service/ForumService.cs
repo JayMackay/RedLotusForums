@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LotusForums.Service
 {
-    public class ForumService : Forum
+    public class ForumService : IForum
     {
         private readonly ApplicationDbContext _context;
 
@@ -54,6 +54,11 @@ namespace LotusForums.Service
         }
 
         public Task UpdateForumTitle(int forumId, string newTitle)
+        {
+            throw new NotImplementedException();
+        }
+
+        IForum IForum.GetById(int id)
         {
             throw new NotImplementedException();
         }

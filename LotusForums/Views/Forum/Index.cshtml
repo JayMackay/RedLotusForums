@@ -1,6 +1,7 @@
 ﻿@model LotusForums.Models.Forum.ForumIndexModel
 
 <h1>Forums</h1>
+
 <table class="table table-hover" id="forumIndexTable">
     <tbody>
         @foreach (var forum in Model.ForumList)
@@ -10,7 +11,7 @@
                     <a asp-controller="Forum" asp-action="Topic" asp-route-id="@forum.Id">
                         @forum.Name
                     </a>
-</td>
+                </td>
                 <td>
                     @forum.Description
                 </td>
