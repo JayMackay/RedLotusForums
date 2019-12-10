@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.902
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LotusForums", "LotusForums\LotusForums.csproj", "{9216A42A-DB16-4EB5-B9B7-F78A3E2E6F0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LotusForums", "LotusForums\LotusForums.csproj", "{9216A42A-DB16-4EB5-B9B7-F78A3E2E6F0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LotusForums.Data", "LotusForums.data\LotusForums.Data.csproj", "{B8477A43-6793-42A5-A2ED-A61B6BD6CDA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LotusForums.Data", "LotusForums.data\LotusForums.Data.csproj", "{B8477A43-6793-42A5-A2ED-A61B6BD6CDA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LotusForums.Service", "LotusForums.Service\LotusForums.Service.csproj", "{82C8C3F1-8866-4D17-B70E-6B0ABD5B0835}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LotusForums.Service", "LotusForums.Service\LotusForums.Service.csproj", "{82C8C3F1-8866-4D17-B70E-6B0ABD5B0835}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

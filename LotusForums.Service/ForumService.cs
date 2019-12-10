@@ -57,10 +57,5 @@ namespace LotusForums.Service
         {
             throw new NotImplementedException();
         }
-
-        IForum IForum.GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

@@ -6,7 +6,7 @@ namespace LotusForums.Data
 {
     public interface IForum
     {
-        IForum GetById(int id);
+        Forum GetById(int id);
         IEnumerable<Forum> GetAll();
         IEnumerable<ApplicationUser> GetAllActiveUSers();
 
