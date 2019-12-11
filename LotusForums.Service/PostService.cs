@@ -1,5 +1,6 @@
 ﻿using LotusForums.Data;
 using LotusForums.Data.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,7 +39,11 @@ namespace LotusForums.Service
 
         public Post GetById(int id)
         {
-            throw new NotImplementedException();
+            return _context.Posts.Where(post => post.Id == id)
+                .Include(Post => Post.User)
+                .Include(Post => Post.Replies).ThenInclude(reply => reply.User)
+                .Include(Post => Post.Forum)
+                .First();
         }
 
         public IEnumerable<Post> GetFilteredPosts(string searchQuery)
