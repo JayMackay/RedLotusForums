@@ -35,7 +35,11 @@ namespace LotusForums.Service
 
         public IEnumerable<Post> GetAll()
         {
-            throw new NotImplementedException();
+            return _context.Posts
+                .Include(Post => Post.User)
+                .Include(Post => Post.Replies).ThenInclude(reply => reply.User)
+                .Include(Post => Post.Forum);
+                
         }
 
         public Post GetById(int id)
@@ -50,6 +54,11 @@ namespace LotusForums.Service
         public IEnumerable<Post> GetFilteredPosts(string searchQuery)
         {
             throw new NotImplementedException();
+        }
+
+        public IEnumerable<Post> GetLatestPosts(int n)
+        {
+            return GetAll().OrderByDescending(Post => Post.Created).Take(n);
         }
 
         public IEnumerable<Post> GetPostsByForum(int id)
